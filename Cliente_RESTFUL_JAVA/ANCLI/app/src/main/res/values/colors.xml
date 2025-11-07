@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colores del Tema Sullivan - Monster University -->
+    
+    <!-- Azules Principales de Sullivan -->
+    <color name="sullivan_primary">#4A90E2</color>
+    <color name="sullivan_primary_dark">#2E5C8A</color>
+    <color name="sullivan_primary_light">#64B5F6</color>
+    <color name="sullivan_accent">#64B5F6</color>
+    
+    <!-- Fondos -->
+    <color name="sullivan_background">#E8F4F8</color>
+    <color name="sullivan_background_light">#F5F9FC</color>
+    <color name="sullivan_card_background">#FFFFFF</color>
+    
+    <!-- Textos -->
+    <color name="sullivan_text_primary">#1E3A5F</color>
+    <color name="sullivan_text_secondary">#5A7A9A</color>
+    <color name="sullivan_text_hint">#90A4AE</color>
+    
+    <!-- Colores Adicionales -->
+    <color name="sullivan_light_blue">#B3D9F2</color>
+    <color name="sullivan_sky_blue">#E3F2FD</color>
+    
+    <!-- Estados y Alertas -->
+    <color name="sullivan_success">#27AE60</color>
+    <color name="sullivan_success_light">#E8F8F5</color>
+    <color name="sullivan_warning">#FF9800</color>
+    <color name="sullivan_warning_light">#FFF3E0</color>
+    <color name="sullivan_error">#E74C3C</color>
+    <color name="sullivan_error_light">#FADBD8</color>
+    
+    <!-- Básicos -->
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="transparent">#00000000</color>
+    
+    <!-- Sombras y Bordes -->
+    <color name="sullivan_shadow">#40000000</color>
+    <color name="sullivan_divider">#E0E0E0</color>
+    
+    <!-- Compatibilidad con Material Design -->
+    <color name="purple_200">#64B5F6</color>
+    <color name="purple_500">#4A90E2</color>
+    <color name="purple_700">#2E5C8A</color>
+    <color name="teal_200">#B3D9F2</color>
+    <color name="teal_700">#4A90E2</color>
+</resources>
