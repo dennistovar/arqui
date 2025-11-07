@@ -1,0 +1,453 @@
+{
+	"info": {
+		"_postman_id": "wcf-conversiones-123",
+		"name": "WCF Servicio de Conversiones",
+		"description": "Colección para probar el servicio WCF de conversiones de unidades (Temperatura, Masa, Longitud)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "0. Verificar WSDL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.137.1:63393/Service.svc?wsdl",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"137",
+						"1"
+					],
+					"port": "63393",
+					"path": [
+						"Service.svc"
+					],
+					"query": [
+						{
+							"key": "wsdl",
+							"value": null
+						}
+					]
+				},
+				"description": "Verifica que el servicio WCF esté accesible y devuelva el WSDL"
+			},
+			"response": []
+		},
+		{
+			"name": "Conversiones de Temperatura",
+			"item": [
+				{
+					"name": "CelsiusToFahrenheit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8",
+								"type": "text"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "\"http://tempuri.org/IService/CelsiusToFahrenheit\"",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\">\r\n  <soap:Body>\r\n    <tem:CelsiusToFahrenheit>\r\n      <tem:celsius>25</tem:celsius>\r\n    </tem:CelsiusToFahrenheit>\r\n  </soap:Body>\r\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.137.1:63393/Service.svc",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"137",
+								"1"
+							],
+							"port": "63393",
+							"path": [
+								"Service.svc"
+							]
+						},
+						"description": "Convierte 25°C a Fahrenheit. Resultado esperado: 77°F"
+					},
+					"response": []
+				},
+				{
+					"name": "FahrenheitToCelsius",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8",
+								"type": "text"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "\"http://tempuri.org/IService/FahrenheitToCelsius\"",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\">\r\n  <soap:Body>\r\n    <tem:FahrenheitToCelsius>\r\n      <tem:fahrenheit>77</tem:fahrenheit>\r\n    </tem:FahrenheitToCelsius>\r\n  </soap:Body>\r\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.137.1:63393/Service.svc",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"137",
+								"1"
+							],
+							"port": "63393",
+							"path": [
+								"Service.svc"
+							]
+						},
+						"description": "Convierte 77°F a Celsius. Resultado esperado: 25°C"
+					},
+					"response": []
+				},
+				{
+					"name": "CelsiusToKelvin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8",
+								"type": "text"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "\"http://tempuri.org/IService/CelsiusToKelvin\"",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\">\r\n  <soap:Body>\r\n    <tem:CelsiusToKelvin>\r\n      <tem:celsius>0</tem:celsius>\r\n    </tem:CelsiusToKelvin>\r\n  </soap:Body>\r\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.137.1:63393/Service.svc",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"137",
+								"1"
+							],
+							"port": "63393",
+							"path": [
+								"Service.svc"
+							]
+						},
+						"description": "Convierte 0°C a Kelvin. Resultado esperado: 273.15K"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Conversiones de Masa",
+			"item": [
+				{
+					"name": "KilogramsToPounds",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8",
+								"type": "text"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "\"http://tempuri.org/IService/KilogramsToPounds\"",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\">\r\n  <soap:Body>\r\n    <tem:KilogramsToPounds>\r\n      <tem:kilograms>10</tem:kilograms>\r\n    </tem:KilogramsToPounds>\r\n  </soap:Body>\r\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.137.1:63393/Service.svc",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"137",
+								"1"
+							],
+							"port": "63393",
+							"path": [
+								"Service.svc"
+							]
+						},
+						"description": "Convierte 10kg a libras. Resultado esperado: 22.0462 lb"
+					},
+					"response": []
+				},
+				{
+					"name": "PoundsToKilograms",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8",
+								"type": "text"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "\"http://tempuri.org/IService/PoundsToKilograms\"",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\">\r\n  <soap:Body>\r\n    <tem:PoundsToKilograms>\r\n      <tem:pounds>22.0462</tem:pounds>\r\n    </tem:PoundsToKilograms>\r\n  </soap:Body>\r\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.137.1:63393/Service.svc",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"137",
+								"1"
+							],
+							"port": "63393",
+							"path": [
+								"Service.svc"
+							]
+						},
+						"description": "Convierte 22.0462 lb a kilogramos. Resultado esperado: 10 kg"
+					},
+					"response": []
+				},
+				{
+					"name": "KilogramsToOunces",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8",
+								"type": "text"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "\"http://tempuri.org/IService/KilogramsToOunces\"",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\">\r\n  <soap:Body>\r\n    <tem:KilogramsToOunces>\r\n      <tem:kilograms>1</tem:kilograms>\r\n    </tem:KilogramsToOunces>\r\n  </soap:Body>\r\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.137.1:63393/Service.svc",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"137",
+								"1"
+							],
+							"port": "63393",
+							"path": [
+								"Service.svc"
+							]
+						},
+						"description": "Convierte 1kg a onzas. Resultado esperado: 35.274 oz"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Conversiones de Longitud",
+			"item": [
+				{
+					"name": "MetersToFeet",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8",
+								"type": "text"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "\"http://tempuri.org/IService/MetersToFeet\"",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\">\r\n  <soap:Body>\r\n    <tem:MetersToFeet>\r\n      <tem:meters>100</tem:meters>\r\n    </tem:MetersToFeet>\r\n  </soap:Body>\r\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.137.1:63393/Service.svc",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"137",
+								"1"
+							],
+							"port": "63393",
+							"path": [
+								"Service.svc"
+							]
+						},
+						"description": "Convierte 100m a pies. Resultado esperado: 328.084 ft"
+					},
+					"response": []
+				},
+				{
+					"name": "FeetToMeters",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8",
+								"type": "text"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "\"http://tempuri.org/IService/FeetToMeters\"",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\">\r\n  <soap:Body>\r\n    <tem:FeetToMeters>\r\n      <tem:feet>328.084</tem:feet>\r\n    </tem:FeetToMeters>\r\n  </soap:Body>\r\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.137.1:63393/Service.svc",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"137",
+								"1"
+							],
+							"port": "63393",
+							"path": [
+								"Service.svc"
+							]
+						},
+						"description": "Convierte 328.084 pies a metros. Resultado esperado: 100 m"
+					},
+					"response": []
+				},
+				{
+					"name": "KilometersToMiles",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml; charset=utf-8",
+								"type": "text"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "\"http://tempuri.org/IService/KilometersToMiles\"",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\">\r\n  <soap:Body>\r\n    <tem:KilometersToMiles>\r\n      <tem:kilometers>10</tem:kilometers>\r\n    </tem:KilometersToMiles>\r\n  </soap:Body>\r\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.137.1:63393/Service.svc",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"137",
+								"1"
+							],
+							"port": "63393",
+							"path": [
+								"Service.svc"
+							]
+						},
+						"description": "Convierte 10km a millas. Resultado esperado: 6.21371 mi"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://192.168.137.1:63393/Service.svc",
+			"type": "string"
+		},
+		{
+			"key": "namespace",
+			"value": "http://tempuri.org/",
+			"type": "string"
+		}
+	]
+}
